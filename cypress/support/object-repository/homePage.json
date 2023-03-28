@@ -1,0 +1,4 @@
+{
+    "profileName": ".admin-dropdown.profile",
+    "logoutBtn": "form > .action-btn"
+}

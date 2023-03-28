@@ -1,0 +1,5 @@
+{
+    "email":"#inputEmail",
+    "password":"#inputPassword",
+    "loginBtn":"#regular-login > div.form-bottom > button"
+}
