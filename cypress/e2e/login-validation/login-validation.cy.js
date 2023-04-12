@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 import loginPage from '../../support/page-objects/loginPage';
-import homePage from '../../support/page-objects/homePage';
-
+import constants from '../../support/constants/Constants';
 let loginData;
 describe('Login Validation test suite', () => {
     beforeEach(() => {
@@ -12,21 +11,19 @@ describe('Login Validation test suite', () => {
             .visit('/')
     });
     it.only('login validation with valid credentials ', () => {
-        loginPage.inputEmail(loginData.valid.email)
+        loginPage.navigateToLoginPage()
+            .inputEmail(loginData.valid.email)
             .inputPassword(loginData.valid.password)
-            .clickSignIn();
-        cy.location('pathname').should('include', '/account/dashboard');
-        // Example for cy.route()
-        //cy.initRout('/envelope/*', 'GET').waitForResponse('/envelope/*', 200);
-        homePage.logout();
-        cy.location('pathname').should('include', '/login');
+            .clickSignIn()
+            .verifyMessage(constants.message.LoggedIn)
+        cy.location('pathname').should('include', '/app/admin/cards');
     });
 
-    it.only('login validation with Invalid credentials ', () => {
-        loginPage.inputEmail(loginData.invalid.email)
+    it('login validation with Invalid credentials ', () => {
+        loginPage.navigateToLoginPage()
+            .inputEmail(loginData.invalid.email)
             .inputPassword(loginData.invalid.password)
             .clickSignIn()
-            .verifyInvalidCredsMessage();
-        cy.location('pathname').should('include', '/login');
+        cy.location('pathname').should('include', '/app/login');
     });
 })

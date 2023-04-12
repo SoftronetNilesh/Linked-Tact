@@ -1,0 +1,4 @@
+{
+    "login":"/app/login",
+    "cards":"/app/admin/cards"
+}

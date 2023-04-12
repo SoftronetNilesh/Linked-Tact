@@ -1,5 +1,6 @@
 {
-    "email":"#inputEmail",
-    "password":"#inputPassword",
-    "loginBtn":"#regular-login > div.form-bottom > button"
+    "email":"#text-input",
+    "password":"input[type=password]",
+    "loginBtn":"#container div.mt-5 > button",
+    "message":"div.notyf__message"
 }

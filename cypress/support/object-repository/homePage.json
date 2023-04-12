@@ -1,4 +1,6 @@
 {
     "profileName": ".admin-dropdown.profile",
-    "logoutBtn": "form > .action-btn"
+    "logoutBtn": "form > .action-btn",
+    "menuList":".sub.rounded-lg.w-full",
+    "burgerBtn": "form > .action-btn"
 }
