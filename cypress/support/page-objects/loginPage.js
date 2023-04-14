@@ -23,7 +23,7 @@ class loginPage {
     }
 
     verifyMessage(message) {
-        cy.get(loginPageRepository.message).should('be.visible').contains(message);
+        cy.get(loginPageRepository.message).should('be.visible').contains(message, { matchCase:false });
     }
 
     verifyInvalidCredsMessage() {

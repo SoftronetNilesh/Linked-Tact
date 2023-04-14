@@ -52,3 +52,42 @@ Cypress.Commands.add('initRout', (link, method) => {
 Cypress.Commands.add('waitForResponse', (link, statusCode) => {
     cy.wait(`@${link}`).its('status').should('eq', statusCode);
 });
+
+Cypress.Commands.add('getUserAuth', ( username, password) => {
+    cy.request({
+        method:  "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        url:  '/api-v1/users/login',
+        body: {
+            username:`${username}`,
+            password:`${password}`,
+        }
+    });
+})
+
+Cypress.Commands.add('clearUserData', (token) => {
+    cy.request({
+        method:  "DELETE",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        url:  '/api-v1/clean-up?code=48976',
+        body: {
+            username:`${username}`,
+            password:`${password}`,
+        }
+    });
+})
+
+Cypress.Commands.add('deleteCard', (token,cardId) => {
+    cy.request({
+        method:  "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        url:  `/api-v1/business-cards/${cardId}`,
+    });
+})
