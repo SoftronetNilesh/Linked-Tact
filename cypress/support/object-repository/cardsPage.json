@@ -1,3 +1,31 @@
 {
-    "menuList":".sub.rounded-lg.w-full"
+    "menuList":".sub.rounded-lg.w-full",
+    "cardsPageTitle": "#container > div > div >.items-center > div > div > h3:nth-child(1)",
+    "addNewCardBtn":"#container .items-center > div > button",
+    "addcardSections":"a .text-black",
+    "nextBtn":"button[data-cy='nextbtn']",
+    "generalCard":{
+        "emailId":"input[data-cy='emailid']",
+        "mobilePhone":"div[data-cy='mobilephone'] >input",
+        "isPersonal":"input[data-cy='ispersonal']",
+        "company":"input[data-cy='companyname']",
+        "jobTitle":"input[data-cy='jobtitle']",
+        "companyLogo":"#filePicker > div > div > div > div > input",
+        "address": {
+            "address1": "input[data-cy='street1']",
+            "address2": "input[data-cy='street2']",
+            "aptUnit": "input[data-cy='aptunit']",
+            "city": "input[data-cy='city']",
+            "state":"input[data-cy='state']",
+            "zip":"input[data-cy='zip']",
+            "country":"input[data-cy='country']"
+        },
+        "security":{
+            "public":"div[data-cy='publicradio']",
+            "private":"div[data-cy='privateradio']"
+        },
+        "social":{
+            "addSocialLinkBtn":"triggersocialmodal"
+        }
+    }
 }
